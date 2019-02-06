@@ -1,0 +1,10 @@
+<p>All Students</p>
+
+<% @students.each do |student| %>
+<p>Name: <%= student.pretty_name()%> </p>
+<p>House: <%= student.house_id()%> </p>
+<p>Age: <%= student.age()%> </p>
+
+<p><a href="/hogwarts-tracker/index/<%=student.id%>">Student Details</a></p>
+<hr />
+<% end %>
