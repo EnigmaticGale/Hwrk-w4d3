@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('house.rb')
 
 class Student
 
@@ -15,6 +16,15 @@ end
 def pretty_name()
     return "#{@first_name} #{@second_name}"
   end
+
+  def house()
+    sql = "SELECT houses.* FROM houses WHERE id = $1"
+    values = [@house_id]
+    houses = SqlRunner.run(sql, values)
+    result = houses.map{|x| House.new(x)}
+    return result[0].name.to_s
+  end
+
 
 def save()
     sql = "INSERT INTO students

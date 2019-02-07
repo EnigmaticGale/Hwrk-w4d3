@@ -1,8 +1,8 @@
 require_relative('../models/student')
 require_relative('../models/house')
 
-# Student.delete_all()
-# House.delete_all()
+Student.delete_all()
+House.delete_all()
 
 
 house_1 = House.new({
